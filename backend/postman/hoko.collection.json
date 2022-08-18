@@ -1,0 +1,1079 @@
+{
+	"info": {
+		"_postman_id": "5775a361-7838-49c2-89b1-b0d11a7da255",
+		"name": "Hoko",
+		"description": "# Introduction\nWhat does your API do?\n\n# Overview\nThings that the developers should know about\n\n# Authentication\nWhat is the preferred way of using the API?\n\n# Error Codes\nWhat errors and status codes can a user expect?\n\n# Rate limit\nIs there a limit to the number of requests a user can send?",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "21762184"
+	},
+	"item": [
+		{
+			"name": "weathers",
+			"item": [
+				{
+					"name": "current",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{BASE_URL}}/weathers/current?lat=39.36600180628301&lon=126.62369318446645",
+							"host": [
+								"{{BASE_URL}}"
+							],
+							"path": [
+								"weathers",
+								"current"
+							],
+							"query": [
+								{
+									"key": "lat",
+									"value": "39.36600180628301"
+								},
+								{
+									"key": "lon",
+									"value": "126.62369318446645"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "daily",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{BASE_URL}}/weathers/daily?lat=39.36600180628301&lon=126.62369318446645",
+							"host": [
+								"{{BASE_URL}}"
+							],
+							"path": [
+								"weathers",
+								"daily"
+							],
+							"query": [
+								{
+									"key": "lat",
+									"value": "39.36600180628301"
+								},
+								{
+									"key": "lon",
+									"value": "126.62369318446645"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "history",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{BASE_URL}}/weathers/history?lat=39.36600180628301&lon=126.62369318446645",
+							"host": [
+								"{{BASE_URL}}"
+							],
+							"path": [
+								"weathers",
+								"history"
+							],
+							"query": [
+								{
+									"key": "lat",
+									"value": "39.36600180628301"
+								},
+								{
+									"key": "lon",
+									"value": "126.62369318446645"
+								}
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "admin",
+			"item": [
+				{
+					"name": "users",
+					"item": [
+						{
+							"name": "API 603",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"exec": [
+											""
+										],
+										"type": "text/javascript"
+									}
+								}
+							],
+							"request": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "userid",
+										"value": "04va3bg4b9ad973d",
+										"type": "text"
+									},
+									{
+										"key": "sessionkey",
+										"value": "2nme2549k96u45mgv053v3c20721v5a568a43ure94vojbqfgn95cdu0v3e79ob4",
+										"type": "text"
+									}
+								],
+								"url": {
+									"raw": "{{BASE_URL}}/admin/users",
+									"host": [
+										"{{BASE_URL}}"
+									],
+									"path": [
+										"admin",
+										"users"
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "notices",
+					"item": [
+						{
+							"name": "API XXX",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"title\": \"notice 1\",\n    \"description\": \"This is description\",\n    \"area\": 5,\n    \"userIds\": []\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{BASE_URL}}/admin/notices",
+									"host": [
+										"{{BASE_URL}}"
+									],
+									"path": [
+										"admin",
+										"notices"
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "sessions",
+					"item": [
+						{
+							"name": "API 680",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"email\": \"admin@infodeliver.com\",\n    \"password\": \"passw0rd\"\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{BASE_URL}}/admin/login",
+									"host": [
+										"{{BASE_URL}}"
+									],
+									"path": [
+										"admin",
+										"login"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "API 681",
+							"request": {
+								"method": "DELETE",
+								"header": [
+									{
+										"key": "userid",
+										"value": "04va3bg4b9ad973d",
+										"type": "text"
+									},
+									{
+										"key": "sessionkey",
+										"value": "vb2lo9b9pnn9qnain2unec2ead1pudvbi1jiri65deik45s2vrd84so025l66c3n",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"email\": \"admin@infodeliver.com\",\n    \"password\": \"passw0rd\"\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{BASE_URL}}/admin/logout",
+									"host": [
+										"{{BASE_URL}}"
+									],
+									"path": [
+										"admin",
+										"logout"
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "password",
+					"item": [
+						{
+							"name": "API 682",
+							"request": {
+								"method": "PUT",
+								"header": [
+									{
+										"key": "userid",
+										"value": "04va3bg4b9ad973d",
+										"type": "text"
+									},
+									{
+										"key": "sessionkey",
+										"value": "3r67tm8d6h2m1g98uf5vnri0i6ohapm66tr0sddonvlvjiqcm3sag8cc729h3ahd",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"oldPassword\": \"passw0rd\",\n    \"newPassword\": \"passw0rd\"\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{BASE_URL}}/admin/password",
+									"host": [
+										"{{BASE_URL}}"
+									],
+									"path": [
+										"admin",
+										"password"
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				}
+			]
+		},
+		{
+			"name": "notices",
+			"item": [
+				{
+					"name": "API 612",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{BASE_URL}}/notices?page=1",
+							"host": [
+								"{{BASE_URL}}"
+							],
+							"path": [
+								"notices"
+							],
+							"query": [
+								{
+									"key": "page",
+									"value": "1"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "API 613",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{BASE_URL}}/notices/1",
+							"host": [
+								"{{BASE_URL}}"
+							],
+							"path": [
+								"notices",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Unread",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{BASE_URL}}/notices/unread",
+							"host": [
+								"{{BASE_URL}}"
+							],
+							"path": [
+								"notices",
+								"unread"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Update read",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"url": {
+							"raw": "{{BASE_URL}}/notices/1/read",
+							"host": [
+								"{{BASE_URL}}"
+							],
+							"path": [
+								"notices",
+								"1",
+								"read"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "users",
+			"item": [
+				{
+					"name": "API 212",
+					"event": [
+						{
+							"listen": "prerequest",
+							"script": {
+								"exec": [
+									""
+								],
+								"type": "text/javascript"
+							}
+						},
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"var jsonData = pm.response.json();\r",
+									"console.log(jsonData);\r",
+									"pm.collectionVariables.set(\"userID\", jsonData.data.userID);"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"devicType\": \"I\",\r\n    \"deviceID\": \"12345678900\",\r\n    \"pushtoken\": \"111\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{BASE_URL}}/register/reg_deviceid",
+							"host": [
+								"{{BASE_URL}}"
+							],
+							"path": [
+								"register",
+								"reg_deviceid"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "API 601",
+					"event": [
+						{
+							"listen": "prerequest",
+							"script": {
+								"exec": [
+									""
+								],
+								"type": "text/javascript"
+							}
+						},
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"var jsonData = pm.response.json();\r",
+									"console.log(jsonData);\r",
+									"pm.collectionVariables.set(\"userID\", jsonData.data.userID);"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"givenNameKanji\": \"eee\",\r\n    \"familyNameKanji\": \"ABCAAA\",\r\n    \"birthYear\": 1945,\r\n    \"area\": 1,\r\n    \"sex\": 1\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{BASE_URL}}/users",
+							"host": [
+								"{{BASE_URL}}"
+							],
+							"path": [
+								"users"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "API 603",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									""
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "userID",
+								"value": "{{TEST_USER_ID}}",
+								"type": "text",
+								"disabled": true
+							},
+							{
+								"key": "sessionKey",
+								"value": "{{TEST_SESSION_ID}}",
+								"type": "text",
+								"disabled": true
+							}
+						],
+						"url": {
+							"raw": "{{BASE_URL}}/users/{{TEST_USER_ID}}",
+							"host": [
+								"{{BASE_URL}}"
+							],
+							"path": [
+								"users",
+								"{{TEST_USER_ID}}"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "API 602",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "urlencoded",
+							"urlencoded": [
+								{
+									"key": "area",
+									"value": "1",
+									"type": "text"
+								},
+								{
+									"key": "sex",
+									"value": "",
+									"type": "text"
+								},
+								{
+									"key": "devicType",
+									"value": "",
+									"type": "text"
+								},
+								{
+									"key": "deviceId",
+									"value": "",
+									"type": "text"
+								},
+								{
+									"key": "pushtoken",
+									"value": "",
+									"type": "text"
+								},
+								{
+									"key": "endpoint",
+									"value": "",
+									"type": "text"
+								},
+								{
+									"key": "givenNameKanji",
+									"value": "",
+									"type": "text"
+								},
+								{
+									"key": "familyNameKanji",
+									"value": "",
+									"type": "text"
+								},
+								{
+									"key": "attribute",
+									"value": "",
+									"type": "text"
+								},
+								{
+									"key": "birthYear",
+									"value": "",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "{{BASE_URL}}/users/{{TEST_USER_ID}}",
+							"host": [
+								"{{BASE_URL}}"
+							],
+							"path": [
+								"users",
+								"{{TEST_USER_ID}}"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "knee_pains",
+			"item": [
+				{
+					"name": "API 632",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{BASE_URL}}/knee_pains?offset=0",
+							"host": [
+								"{{BASE_URL}}"
+							],
+							"path": [
+								"knee_pains"
+							],
+							"query": [
+								{
+									"key": "offset",
+									"value": "0"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "API 631",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"kneePain\": 2\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{BASE_URL}}/knee_pains",
+							"host": [
+								"{{BASE_URL}}"
+							],
+							"path": [
+								"knee_pains"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "API 633",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{BASE_URL}}/knee_pains/statistics?from=2022-07-13&to=2022-07-19",
+							"host": [
+								"{{BASE_URL}}"
+							],
+							"path": [
+								"knee_pains",
+								"statistics"
+							],
+							"query": [
+								{
+									"key": "from",
+									"value": "2022-07-13"
+								},
+								{
+									"key": "to",
+									"value": "2022-07-19"
+								}
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "foods",
+			"item": [
+				{
+					"name": "API 642",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"auth": {
+							"type": "oauth2",
+							"oauth2": [
+								{
+									"key": "addTokenTo",
+									"value": "header",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"foods\": {\n        \"food1\": 1,\n        \"food2\": 1,\n        \"food3\": 0,\n        \"food9\": 1\n    }\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{BASE_URL}}/foods?from=20220801&to=20220813",
+							"host": [
+								"{{BASE_URL}}"
+							],
+							"path": [
+								"foods"
+							],
+							"query": [
+								{
+									"key": "from",
+									"value": "20220801"
+								},
+								{
+									"key": "to",
+									"value": "20220813"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "API 641",
+					"request": {
+						"auth": {
+							"type": "oauth2",
+							"oauth2": [
+								{
+									"key": "addTokenTo",
+									"value": "header",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"foods\": {\n        \"food1\": 1,\n        \"food2\": 1,\n        \"food3\": 0,\n        \"food4\": 1,\n        \"food5\": 1,\n        \"food6\": 1,\n        \"food7\": 1,\n        \"food8\": 1,\n        \"food9\": 1,\n        \"food10\": 1\n    }\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:6868/api/v1/foods",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "6868",
+							"path": [
+								"api",
+								"v1",
+								"foods"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "moods",
+			"item": [
+				{
+					"name": "API 621",
+					"request": {
+						"auth": {
+							"type": "oauth2",
+							"oauth2": [
+								{
+									"key": "addTokenTo",
+									"value": "header",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"mood\": 2\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{BASE_URL}}/moods",
+							"host": [
+								"{{BASE_URL}}"
+							],
+							"path": [
+								"moods"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "API 622",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{BASE_URL}}/moods?offset=0",
+							"host": [
+								"{{BASE_URL}}"
+							],
+							"path": [
+								"moods"
+							],
+							"query": [
+								{
+									"key": "offset",
+									"value": "0"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "API 623",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{BASE_URL}}/moods/statistics?from=2022-07-13&to=2022-07-20",
+							"host": [
+								"{{BASE_URL}}"
+							],
+							"path": [
+								"moods",
+								"statistics"
+							],
+							"query": [
+								{
+									"key": "from",
+									"value": "2022-07-13"
+								},
+								{
+									"key": "to",
+									"value": "2022-07-20"
+								}
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "HOME",
+			"item": [
+				{
+					"name": "API 6XX",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{BASE_URL}}/home?date=2022-07-23",
+							"host": [
+								"{{BASE_URL}}"
+							],
+							"path": [
+								"home"
+							],
+							"query": [
+								{
+									"key": "date",
+									"value": "2022-07-23"
+								}
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Silmee",
+			"item": [
+				{
+					"name": "API 6xx",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"deviceId\": \"008098421439\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{BASE_URL}}/users/{{TEST_USER_ID}}/silmee",
+							"host": [
+								"{{BASE_URL}}"
+							],
+							"path": [
+								"users",
+								"{{TEST_USER_ID}}",
+								"silmee"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "API 6xxx",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"deviceId\": \"008098421439\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{BASE_URL}}/users/{{TEST_USER_ID}}/silmee",
+							"host": [
+								"{{BASE_URL}}"
+							],
+							"path": [
+								"users",
+								"{{TEST_USER_ID}}",
+								"silmee"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "API 6xxxx",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"deviceId\": \"008098421439\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{BASE_URL}}/users/{{TEST_USER_ID}}/silmee/state",
+							"host": [
+								"{{BASE_URL}}"
+							],
+							"path": [
+								"users",
+								"{{TEST_USER_ID}}",
+								"silmee",
+								"state"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Test readVital",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{BASE_URL}}/test/silmee/readVital?deviceUser=96&ts=1657842796&te=1657843332&page=1",
+							"host": [
+								"{{BASE_URL}}"
+							],
+							"path": [
+								"test",
+								"silmee",
+								"readVital"
+							],
+							"query": [
+								{
+									"key": "deviceUser",
+									"value": "96"
+								},
+								{
+									"key": "ts",
+									"value": "1657842796"
+								},
+								{
+									"key": "te",
+									"value": "1657843332"
+								},
+								{
+									"key": "page",
+									"value": "1"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Test readWristband",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{BASE_URL}}/test/silmee/readWristband",
+							"host": [
+								"{{BASE_URL}}"
+							],
+							"path": [
+								"test",
+								"silmee",
+								"readWristband"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	],
+	"auth": {
+		"type": "edgegrid"
+	},
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					"// pm.request.headers.add({ ",
+					"//     key: \"userID\",",
+					"//     value: pm.variables.get(\"TEST_USER_ID\")",
+					"// });",
+					"// pm.request.headers.add({ ",
+					"//     key: \"sessionKey\",",
+					"//     value: pm.variables.get(\"TEST_SESSION_ID\")",
+					"// });"
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		}
+	],
+	"variable": [
+		{
+			"key": "userID",
+			"value": ""
+		}
+	]
+}

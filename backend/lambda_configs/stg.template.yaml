@@ -1,0 +1,53 @@
+AWSTemplateFormatVersion: "2010-09-09"
+Transform: "AWS::Serverless-2016-10-31"
+Resources:
+  ExpressApi:
+    Type: AWS::Serverless::Api
+    Properties:
+      StageName: prod
+      BinaryMediaTypes: ["*/*"]
+  HokoHealthdc:
+    Type: "AWS::Serverless::Function"
+    Properties:
+      Handler: lambda.handler
+      Runtime: nodejs14.x
+      Timeout: 360
+      MemorySize: 256
+      CodeUri: ../
+      Events:
+        ProxyApiGreedy:
+          Type: Api
+          Properties:
+            RestApiId: !Ref ExpressApi
+            Path: /{proxy+}
+            Method: ANY
+      Environment:
+        Variables:
+          APP_PORT: 3000
+          DB_HOST:
+          DB_USER:
+          DB_PASS:
+          DB_NAME:
+          DB_DIALECT:
+          DB_PORT:
+          PROXY_SERVER:
+          SILMEE_API_ENDPOINT:
+          SILMEE_USERNAME:
+          SILMEE_PASSWORD:
+Outputs:
+  LambdaFunctionConsoleUrl:
+    Description: Console URL for the Lambda Function.
+    Value: !Sub https://${AWS::Region}.console.aws.amazon.com/lambda/home?region=${AWS::Region}#/functions/${HokoHealthdc}
+  LambdaFunctionName:
+    Description: Name of the Serverless Express Lambda Function
+    Value: !Ref HokoHealthdc
+  ApiGatewayApiConsoleUrl:
+    Description: Console URL for the API Gateway API's Stage.
+    Value: !Sub https://${AWS::Region}.console.aws.amazon.com/apigateway/home?region=${AWS::Region}#/apis/${ExpressApi}/stages/prod
+
+  ApiUrl:
+    Description:
+      Invoke URL for your API. Clicking this link will perform a GET request
+      on the root resource of your API.
+    Value: !Sub https://${ExpressApi}.execute-api.${AWS::Region}.amazonaws.com/prod/
+

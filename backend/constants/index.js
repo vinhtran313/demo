@@ -1,0 +1,4 @@
+module.exports = {
+  DEFAULT_USER_ID: "123456789-abcdef",
+  DEFAULT_SESSION_ID: "1CA2NvS0PwZ3jNiqEojKPYStjkQcWHYKiQEYXvD1s4N3u9fjbMVBE4r9krTVfkXb",
+}

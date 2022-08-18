@@ -1,0 +1,27 @@
+{
+	"id": "f97b8170-beb4-4528-ae73-96d9028ef0c5",
+	"name": "Hoko_development",
+	"values": [
+		{
+			"key": "BASE_URL",
+			"value": "http://localhost:6868/api/v1",
+			"type": "default",
+			"enabled": true
+		},
+		{
+			"key": "TEST_USER_ID",
+			"value": "123456789-abcdef",
+			"type": "default",
+			"enabled": true
+		},
+		{
+			"key": "TEST_SESSION_ID",
+			"value": "1CA2NvS0PwZ3jNiqEojKPYStjkQcWHYKiQEYXvD1s4N3u9fjbMVBE4r9krTVfkXb",
+			"type": "default",
+			"enabled": true
+		}
+	],
+	"_postman_variable_scope": "environment",
+	"_postman_exported_at": "2022-07-17T15:33:50.233Z",
+	"_postman_exported_using": "Postman/9.24.2"
+}

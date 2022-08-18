@@ -1,0 +1,165 @@
+* {
+  box-sizing: border-box;
+}
+
+html {
+  font-size: 62.5%;
+  padding: 0;
+  margin: 0;
+  min-height: 100vh;
+  min-height:  calc(var(--vh, 1vh) * 100);
+}
+
+body {
+  font-size: 1.6rem;
+  font-family: "Noto Sans JP", serif;
+  text-rendering: optimizeSpeed;
+  color: $text-color;
+  overflow-y: overlay;
+  padding: 0;
+  margin: 0;
+  min-height: 100vh;
+  min-height: calc(var(--vh, 1vh) * 100);
+}
+
+// Scrollbar CSS
+html *::-webkit-scrollbar {
+  border-radius: 0;
+  width: 8px;
+}
+
+html *::-webkit-scrollbar-thumb {
+  border-radius: 4px;
+  background-color: rgba(0, 0, 0, 0.15);
+}
+
+html *::-webkit-scrollbar-track {
+  border-radius: 0;
+  background-color: rgba(0, 0, 0, 0);
+}
+
+a,
+a:visited,
+a:hover {
+  color: $text-color;
+}
+
+img {
+  max-width: 100%;
+}
+
+.text-white {
+  color: $white-color;
+}
+
+.text-picton-blue {
+  color: $picton-blue-color;
+}
+
+.text-persian-red {
+  color: $persian-red-color;
+}
+
+.text-silver-lake-blue {
+  color: $silver-lake-blue-color;
+}
+
+.background-bright-gray {
+  background-color: $bright-gray-color;
+}
+
+.background-white {
+  background-color: $white-color;
+}
+
+.flex-1 {
+  flex: 1;
+}
+
+.ct-progress {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  width: 100%;
+  .percent {
+    position: relative;
+    height: 210px;
+  }
+
+  .circle-wrapper {
+    position: relative;
+    width: 210px;
+    height: 210px;
+    transform: rotate(-90deg);
+
+    circle {
+      width: 100%;
+      height: 100%;
+      fill: none;
+      stroke: #f0f0f0;
+      stroke-width: 10;
+      stroke-linecap: round;
+
+      &:last-of-type {
+        stroke-dasharray: 625px;
+        stroke-dashoffset: calc(625px - (625px * var(--percent)) / 100);
+        stroke: $picton-blue-color;
+      }
+    }
+  }
+  .number {
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+  }
+}
+
+.page-wrapper {
+  height: 100%;
+}
+
+.keep-all {
+  word-break: keep-all;
+}
+
+.overflow-hidden {
+  overflow: hidden;
+}
+
+.form-admin-wrapper {
+    width: 100%;
+    border: 1px solid $argent-color;
+    text-align: center;
+    margin: auto;
+    padding: 10px 20px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+    top: 50%;
+    left: 50%;
+    position: absolute;
+    transform: translate(-50%, -50%);
+    .title-form-admin-sm {
+        text-align: center;
+    }
+    .title-form-admin-lg {
+        text-align: center;
+    }
+}
+
+.full-width {
+    width: 100%;
+}
+
+.h-fit-content {
+    height: fit-content;
+}
+
+.min-height-100 {
+  min-height: 100%;
+}
